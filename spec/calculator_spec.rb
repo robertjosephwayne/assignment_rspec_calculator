@@ -131,6 +131,30 @@ describe Calculator do
   # including negative and decimal powers
   describe "pow" do
 
+    it "properly raises positive numbers to a positive integer power" do
+      expect(Calculator.new.pow(2, 3)).to eq(8)
+    end
+
+    it "properly raises positive numbers to a negative integer power" do
+      expect(Calculator.new.pow(2, -3)).to be_within(0.1).of(0.125)
+    end
+
+    it "properly raises negative numbers to a positive integer power" do
+      expect(Calculator.new.pow(-9, 2)).to eq(81)
+    end
+
+    it "properly raises negative numbers to a negative integer power" do
+      expect(Calculator.new.pow(-4, -2)).to be_within(0.1).of(0.0625)
+    end
+
+    it "properly raises positive numbers to a positive decimal power" do
+      expect(Calculator.new.pow(16, 0.5)).to be_within(0.1).of(4)
+    end
+
+    it "properly raises positive numbers to a negative decimal power" do
+      expect(Calculator.new.pow(25, -0.6)).to be_within(0.1).of(0.145)
+    end
+
   end
 
   # The sqrt method properly determines square roots for positive numbers
