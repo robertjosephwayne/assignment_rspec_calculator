@@ -50,6 +50,34 @@ describe Calculator do
   # The multiply method properly multiplies numbers
   describe "multiply" do
 
+    it "properly multiplies two positive integers" do
+      expect(calc.multiply(2, 6)).to eq(12)
+    end
+
+    it "properly multiplies two negative integers" do
+      expect(calc.multiply(-3, -6)).to eq(18)
+    end
+
+    it "properly multiplies two positive floats" do
+      expect(calc.multiply(4.0, 7.0)).to be_within(0.1).of(28.0)
+    end
+
+    it "properly multiplies two negative floats" do
+      expect(calc.multiply(-5.0, -9.0)).to be_within(0.1).of(45.0)
+    end
+
+    it "properly multiplies a positive integer and a positive float" do
+      expect(calc.multiply(23, 6.0)).to be_within(0.1).of(138.0)
+    end
+
+    it "properly multiplies a positive integer and a negative float" do
+      expect(calc.multiply(23, -6.0)).to be_within(0.1).of(-138.0)
+    end
+
+    it "properly multiplies a negative integer and a positive float" do
+      expect(calc.multiply(-9, 4.0)).to be_within(0.1).of(-36.0)
+    end
+
   end
 
   # The divide method properly divides numbers
