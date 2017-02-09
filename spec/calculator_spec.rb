@@ -46,7 +46,7 @@ describe Calculator do
 
   end
 
-  # The multiply method properly multiplies numbers
+  # The multiply method properly multiplies numbers.
   describe "multiply" do
 
     it "properly multiplies two positive integers" do
@@ -128,7 +128,7 @@ describe Calculator do
   end
 
   # The pow method properly raises numbers to their power
-  # including negative and decimal powers
+  # including negative and decimal powers.
   describe "pow" do
 
     it "properly raises positive numbers to a positive integer power" do
@@ -178,7 +178,7 @@ describe Calculator do
   end
 
   # The memory= function stores an object in memory,
-  # overwriting any previous object in memory
+  # overwriting any previous object in memory.
   describe "memory=" do
 
     it "stores an object in memory" do
@@ -223,7 +223,6 @@ describe Calculator do
   # If the stringify input is passed to a new calculator
   # the outputs of each of the computational functions above
   # is turned into a string.
-
   describe "stringify" do
 
     it "causes a new calculator to return a string as the output of the add function" do
