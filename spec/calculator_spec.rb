@@ -223,7 +223,32 @@ describe Calculator do
   # If the stringify input is passed to a new calculator
   # the outputs of each of the computational functions above
   # is turned into a string.
+
   describe "stringify" do
+
+    it "causes a new calculator to return a string as the output of the add function" do
+      expect(Calculator.new(true).add(1, 2)).to be_a(String)
+    end
+
+    it "causes a new calculator to return a string as the output of the subtract function" do
+      expect(Calculator.new(true).subtract(1, 2)).to be_a(String)
+    end
+
+    it "causes a new calculator to return a string as the output of the multiply function" do
+      expect(Calculator.new(true).multiply(1, 2)).to be_a(String)
+    end
+
+    it "causes a new calculator to return a string as the output of the divide function" do
+      expect(Calculator.new(true).divide(1, 2)).to be_a(String)
+    end
+
+    it "causes a new calculator to return a string as the output of the pow function" do
+      expect(Calculator.new(true).pow(1, 2)).to be_a(String)
+    end
+
+    it "causes a new calculator to return a string as the output of the sqrt function" do
+      expect(Calculator.new(true).sqrt(2)).to be_a(String)
+    end
 
   end
 
