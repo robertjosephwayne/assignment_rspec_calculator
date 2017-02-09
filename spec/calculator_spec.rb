@@ -181,12 +181,42 @@ describe Calculator do
   # overwriting any previous object in memory
   describe "memory=" do
 
+    it "stores an object in memory" do
+      calc = Calculator.new
+      calc.memory = 16
+      expect(calc.memory).to eq(16)
+    end
+
+    it "overwrites any previous object in memory" do
+      calc = Calculator.new
+      calc.memory = 16
+      calc.memory = 34
+      expect(calc.memory).to eq(34)
+    end
+
   end
 
   # The memory function returns the object in memory
   # and clears memory when returned,
   # and starts as nil.
   describe "memory" do
+
+    it "starts as nil" do
+      expect(Calculator.new.memory).to be_nil
+    end
+
+    it "returns the object in memory" do
+      calc = Calculator.new
+      calc.memory = 34
+      expect(calc.memory).to eq(34)
+    end
+
+    it "clears the memory when returned" do
+      calc = Calculator.new
+      calc.memory = 34
+      calc.memory
+      expect(calc.memory).to be_nil
+    end
 
   end
 
