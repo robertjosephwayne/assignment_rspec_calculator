@@ -163,6 +163,18 @@ describe Calculator do
   # or 2-digit decimals for non-round roots.
   describe "sqrt" do
 
+    it "raises errors for negative inputs" do
+      expect{ Calculator.new.sqrt(-3) }.to raise_error(ArgumentError)
+    end
+
+    it "returns integers for round roots" do
+      expect(Calculator.new.sqrt(16)).to eq(4)
+    end
+
+    it "returns 2-digit decimals for non-round roots" do
+      expect(Calculator.new.sqrt(17)).to be_within(0.1).of(4.1)
+    end
+
   end
 
   # The memory= function stores an object in memory,
